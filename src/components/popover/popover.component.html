@@ -1,0 +1,18 @@
+<ng-template>
+  <div class="d-popover-container"
+       #focusTrapElement
+       [ngClass]="_classList">
+    <div class="wrapper">
+      <div class="arrow" [ngStyle]="_arrowAlignmentStyles"></div>
+      <header>
+        <ng-content select="[dHeader]"></ng-content>
+      </header>
+      <div class="content">
+        <ng-content select="[dBody]"></ng-content>
+      </div>
+      <footer>
+        <ng-content select="[dFooter]"></ng-content>
+      </footer>
+    </div>
+  </div>
+</ng-template>

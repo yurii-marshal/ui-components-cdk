@@ -1,0 +1,17 @@
+@import '../../mixins/_mixins';
+
+$header-and-breadcrumbs-height: 150px;
+
+.d-card {
+  @include scrollbar;
+
+  @include shadowing(3);
+
+  width: 100%;
+  height: calc(100vh - #{$header-and-breadcrumbs-height});
+  max-height: calc(100vh - #{$header-and-breadcrumbs-height});
+  background-color: $xl-white;
+  padding: 0 15px;
+  margin-right: auto;
+  margin-left: auto;
+}

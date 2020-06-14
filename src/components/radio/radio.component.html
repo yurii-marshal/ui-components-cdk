@@ -1,0 +1,24 @@
+<label [attr.for]="inputId" class="d-radio-label" #label [ngClass]="[dLabelPosition]">
+  <div class="d-radio-container" [ngClass]="{'inverse': dInvertColor}">
+
+    <div class="d-radio-button">
+      <label>
+        <input #input class="d-radio-input"
+               (click)="onClick($event)"
+               (change)="dOnChanged($event)"
+               type="radio"
+               [value]="value"
+               [checked]="dChecked"
+               [disabled]="dDisabled"
+               [attr.name]="dName"
+               [attr.id]="dId"
+               data-sat="d-radio-button"
+        >
+        <span [ngClass]="[dLabelPosition]">
+          <ng-content></ng-content>
+        </span>
+      </label>
+    </div>
+
+  </div>
+</label>

@@ -1,0 +1,145 @@
+@import '~@angular/cdk/_overlay';
+
+// Include overlay styles
+@include cdk-overlay();
+
+// mixin to reset previous styles
+@mixin clear-border-color() {
+  border-color: transparent;
+}
+
+.d-tooltip {
+  max-width: 256px;
+  max-height: 106px;
+  padding: 8px 12px;
+  border-radius: 2px;
+  color: $xl-white;
+  background-color: $xl-black;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+
+  .arrow {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    &.top-before {
+      top: 100%;
+      right: 18px;
+      left: auto;
+      margin-right: -6px;
+      border-width: 6px;
+      border-color: $xl-black transparent transparent transparent;
+    }
+    &.top-after {
+      top: 100%;
+      left: 18px;
+      right: auto;
+      margin-left: -6px;
+      border-width: 6px;
+      border-color: $xl-black transparent transparent transparent;
+    }
+    &.bottom-before {
+      bottom: 100%;
+      right: 18px;
+      left: auto;
+      margin-right: -6px;
+      border-width: 6px;
+      border-color: transparent transparent $xl-black transparent;
+    }
+    &.bottom-after {
+      bottom: 100%;
+      left: 18px;
+      right: auto;
+      margin-left: -6px;
+      border-width: 6px;
+      border-color: transparent transparent $xl-black transparent;
+    }
+    &.left {
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      right: 100%;
+      border-width: 6px;
+      border-color: transparent $xl-black transparent transparent;
+    }
+    &.right {
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      left: 100%;
+      border-width: 6px;
+      border-color: transparent transparent transparent $xl-black;
+    }
+  }
+
+  &.error {
+    background-color: #e15557;
+    .arrow {
+      &.top-before {
+        border-color: #e15557 transparent transparent transparent;
+      }
+      &.top-after {
+        border-color: #e15557 transparent transparent transparent;
+      }
+      &.bottom-before {
+        border-color: transparent transparent #e15557 transparent;
+      }
+      &.bottom-after {
+        border-color: transparent transparent #e15557 transparent;
+      }
+      &.left {
+        border-color: transparent #e15557 transparent transparent;
+      }
+      &.right {
+        border-color: transparent transparent transparent #e15557;
+      }
+    }
+  }
+
+  &.warning {
+    background-color: #e9910d;
+    .arrow {
+      &.top-before {
+        border-color: #e9910d transparent transparent transparent;
+      }
+      &.top-after {
+        border-color: #e9910d transparent transparent transparent;
+      }
+      &.bottom-before {
+        border-color: transparent transparent #e9910d transparent;
+      }
+      &.bottom-after {
+        border-color: transparent transparent #e9910d transparent;
+      }
+      &.left {
+        border-color: transparent #e9910d transparent transparent;
+      }
+      &.right {
+        border-color: transparent transparent transparent #e9910d;
+      }
+    }
+  }
+
+  &.success {
+    background-color: #86b72f;
+    .arrow {
+      &.top-before {
+        border-color: #86b72f transparent transparent transparent;
+      }
+      &.top-after {
+        border-color: #86b72f transparent transparent transparent;
+      }
+      &.bottom-before {
+        border-color: transparent transparent #86b72f transparent;
+      }
+      &.bottom-after {
+        border-color: transparent transparent #86b72f transparent;
+      }
+      &.left {
+        border-color: transparent #86b72f transparent transparent;
+      }
+      &.right {
+        border-color: transparent transparent transparent #86b72f;
+      }
+    }
+  }
+}

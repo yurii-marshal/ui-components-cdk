@@ -1,0 +1,8 @@
+<div class="d-tooltip"
+     [ngClass]="tooltipClass"
+     [@state]="_visibility"
+     (@state.start)="_animationStart()"
+     (@state.done)="_animationDone($event)">
+    <div class="arrow" [ngClass]="_arrowClass"></div>
+    {{message}}
+</div>

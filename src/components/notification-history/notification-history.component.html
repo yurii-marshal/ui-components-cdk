@@ -1,0 +1,24 @@
+<header class="page-header">
+  <h1 class="h-first-level pull-left">Notification History</h1>
+  <div class="search-block pull-right">
+    <input [(ngModel)]="searchParam" type="text" placeholder="Search" pattern="[a-zA-Z0-9]*" />
+    <button (click)="searchByField()">
+      <d-icon [dIcon]="'d-search-small-web'" dSvgClass="svg-icon"></d-icon>
+    </button>
+  </div>
+</header>
+<section class="page-body">
+  <div class="container-fluid">
+    <div class="d-tab-container notifications-page">
+      <tabset *ngIf="services.length > 1" class="xl-nav-tabs">
+        <div data-title="All"></div>
+        <tab (select)="onTabSelect()" [active]="activeTab === i"
+             *ngFor="let service of services; let i = index"></tab>
+      </tabset>
+      <div *ngIf="isNotificationsLoaded" class="table-block">
+        <ag-grid-angular class="list-grid" [gridOptions]="gridOptions"></ag-grid-angular>
+      </div>
+      <d-spinner *ngIf="!isNotificationsLoaded" dLabel="Loading..."></d-spinner>
+    </div>
+  </div>
+</section>
